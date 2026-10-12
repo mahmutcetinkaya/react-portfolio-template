@@ -1,9 +1,16 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import App from "./App";
+import { portfolioData } from "./data/portfolio";
 
-test('renders learn react link', () => {
+test("renders hero and core sections", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+  expect(
+    screen.getByRole("heading", { name: portfolioData.hero.name })
+  ).toBeInTheDocument();
+
+  expect(screen.getByRole("button", { name: /projeler/i })).toBeInTheDocument();
+  expect(screen.getByRole("heading", { name: /deneyim & eğitim/i })).toBeInTheDocument();
+  expect(screen.getByRole("heading", { name: "İletişim" })).toBeInTheDocument();
 });

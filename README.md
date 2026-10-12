@@ -1,86 +1,57 @@
-# Developer Portfolio Template 🚀
+# Modern React Portföy Şablonu
 
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![Node.js](https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) ![npm](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+Koyu (siyah/füme) temalı, hareketli ve responsive kişisel portföy arayüzü.
 
-## What is this?
+## Öne çıkanlar
 
-This simple portfolio template is designed to showcase your past projects, career history, skill sets, and more.
+- React + TypeScript tabanlı yapı (statik HTML'e dönüştürülmedi)
+- Bölümler: sabit/aktif navbar, hero, hakkımda, yetenekler, projeler, deneyim/eğitim, iletişim, footer
+- Projeler veri dizisinden kart olarak üretilir (teknoloji etiketleri + demo/kaynak kodu)
+- Scroll reveal, hover efektleri ve ölçülü arka plan hareketleri
+- `prefers-reduced-motion` desteği
+- Erişilebilir semantik yapı, klavye odağı ve kontrast odaklı tasarım
 
-View the [Demo](https://yujisatojr.github.io/react-portfolio-template/).
+## İçerik nereden güncellenir?
 
-**This template is free to use, and no attribution is required.** You can fork or download this repository to customize it for your own use. Please don't forget to leave a ⭐ if you like this portfolio!
+Tüm ana içerik tek dosyada tutulur:
 
-![screenshot](./src/assets//images/screenshot.png)
+- `src/data/portfolio.ts`
 
-## Features
+Bu dosyadan aşağıdakileri düzenleyebilirsiniz:
 
-✅ Open source (free to use, no attribution required)  
-✅ Responsive design & mobile-friendly  
-✅ Supports both dark and light modes  
-✅ Highly customizable multi-component layout  
-✅ Built with modern technologies (React, TypeScript, JavaScript, and SCSS)  
+- Hero: isim, unvan, açıklama, CTA butonları, sosyal bağlantılar
+- Hakkımda metni ve öne çıkanlar
+- Yetenek kategorileri
+- Projeler (kartlar, teknoloji etiketleri, demo ve kaynak kodu URL'leri)
+- Deneyim/eğitim zaman çizelgesi
+- İletişim bilgileri
+- Footer notu
 
-## Quick Setup
+## Yerel geliştirme
 
-1. Ensure you have [Node.js](https://nodejs.org/) installed. Check your installation by running:
+```bash
+npm install
+npm start
+```
 
-    ```bash
-    node -v
-    ```
+Uygulama: `http://localhost:3000`
 
-2. In the project directory, install dependencies:
+## Test ve production build
 
-    ```bash
-    npm install
-    ```
+```bash
+npm test -- --watchAll=false
+npm run build
+```
 
-3. Start the development server:
+Build çıktısı: `build/`
 
-    ```bash
-    npm start
-    ```
+## Cloudflare Pages ayarları
 
-4. Open [http://localhost:3000](http://localhost:3000) to view the app in the browser.
+Bu proje `react-scripts` kullanır. Cloudflare Pages üzerinde ayarlar:
 
-5. Customize the template by navigating to the `/src/components` directory. Modify texts, pictures, and other information as needed.
+- Framework preset: **Create React App** (veya None)
+- Build command: `npm run build`
+- Build output directory: `build`
+- Node version: Cloudflare varsayılan güncel LTS (gerekirse `NODE_VERSION` tanımlayın)
 
-The page will reload if you make edits, and you will see any lint errors in the console.
-
-If you are interested in creating a mockup image like the ones from the personal projects section, I recommend [Genmoo](https://gemoo.com/tools/browser-mockup-generator/). This website lets you generate sleek looking browser mockups for free.
-
-## Deployment
-
-You can choose your preferred service (e.g., [Netlify](https://www.netlify.com/), [Render](https://render.com/), [Heroku](https://www.heroku.com/)) for deployment. One of the easiest ways to host this portfolio is using GitHub Pages. Follow the instructions below for a production deploy.
-
-1. **Set Up GitHub Repository**
-
-    Create a new repository on GitHub for your portfolio app.
-
-2. **Configure `package.json`**
-
-    Edit the following properties in your `package.json` file:
-
-    ```json
-    {
-        "homepage": "https://yourusername.github.io/your-repo-name",
-        "scripts": {
-            "predeploy": "npm run build",
-            "deploy": "gh-pages -d build",
-            ...
-        }
-    }
-    ```
-
-    Replace `yourusername` with your GitHub username and `your-repo-name` with the name of your GitHub repository.
-
-3. **Deploy to GitHub Pages**
-
-    Run the following command to deploy your app:
-
-    ```bash
-    npm run deploy
-    ```
-
-4. **Access Your Deployed App**
-
-    After successfully deploying, you can access your app at `https://yourusername.github.io/your-repo-name`.
+Git entegrasyonu ile her push sonrası otomatik deploy alınabilir.
